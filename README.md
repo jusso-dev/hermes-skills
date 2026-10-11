@@ -42,6 +42,13 @@ Australian cyber security guidance for Hermes: retrieval over ASD, ACSC and othe
 hermes plugins install jusso-dev/hermes-skills/plugins/hermes-cyber-au
 ```
 
+Hermes scans plugins when it installs them. This one is a community plugin that runs Python, so the scan returns a "caution" verdict and Hermes stops. The findings are expected: the pack's own prompt-injection filter contains the phrases it looks for, and the README mentions `pip install`. Read the findings, then install with `--force` and enable it:
+
+```bash
+hermes plugins install jusso-dev/hermes-skills/plugins/hermes-cyber-au --force
+hermes plugins enable hermes-cyber-au
+```
+
 The plugin registers its skills when it loads. Details, configuration and the knowledge refresh are in [plugins/hermes-cyber-au/README.md](plugins/hermes-cyber-au/README.md). This pack used to live at `jusso-dev/hermes-cyber-au` and moved here with its git history.
 
 ## Layout
