@@ -1,0 +1,13 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "groupings": [
+    {
+      "title": "Products",
+      "skills": ["crownguard", "junction", "m365-secure", "oakattest", "servicesnap", "skytime"]
+    },
+    {
+      "title": "Home",
+      "skills": ["happie-parent"]
+    }
+  ]
+}
