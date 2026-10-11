@@ -4,7 +4,7 @@ version: "0.1.0"
 description: "Australian cyber guidance for Hermes. Retrieval, skills and a read-only query check on top of Hermes and Oh My Hermes."
 author: Justin Middler
 license: MIT
-homepage: https://github.com/jusso-dev/hermes-cyber-au
+homepage: https://github.com/jusso-dev/hermes-skills/tree/main/plugins/hermes-cyber-au
 provides_tools:
   - cyber_au_search
   - cyber_au_control

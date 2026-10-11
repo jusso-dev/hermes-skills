@@ -1,4 +1,4 @@
-name: knowledge refresh
+name: cyber-au knowledge refresh
 
 on:
   schedule:
@@ -15,6 +15,9 @@ permissions:
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: plugins/hermes-cyber-au
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -34,7 +37,7 @@ jobs:
             echo "No change. No pull request."
             exit 0
           fi
-          branch="knowledge-refresh/$(TZ=Australia/Sydney date +%F)"
+          branch="cyber-au-knowledge-refresh/$(TZ=Australia/Sydney date +%F)"
           at=$(printf '\x40')
           git config user.name "hermes-cyber-au refresh"
           git config user.email "github-actions[bot]${at}users.noreply.github.com"

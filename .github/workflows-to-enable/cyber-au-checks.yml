@@ -1,13 +1,22 @@
-name: checks
+name: cyber-au checks
 
 on:
   pull_request:
+    paths:
+      - "plugins/hermes-cyber-au/**"
+      - ".github/workflows/cyber-au-checks.yml"
   push:
     branches: [main]
+    paths:
+      - "plugins/hermes-cyber-au/**"
+      - ".github/workflows/cyber-au-checks.yml"
 
 jobs:
   test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: plugins/hermes-cyber-au
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

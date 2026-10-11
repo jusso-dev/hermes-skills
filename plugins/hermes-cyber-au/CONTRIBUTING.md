@@ -14,4 +14,4 @@ Issues and pull requests are welcome. Please keep the pack factual.
 
 Run `python -m unittest discover -s tests -v` before you open a pull request.
 The GitHub Action runs the same tests and the eval. It does not push to main.
-A knowledge refresh opens a pull request on `knowledge-refresh/YYYY-MM-DD`.
+A knowledge refresh opens a pull request on `cyber-au-knowledge-refresh/YYYY-MM-DD`.

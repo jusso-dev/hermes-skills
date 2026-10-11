@@ -11,13 +11,19 @@ Live checks are off until you configure them, and they are read-only. A response
 
 ## Install
 
+This pack now lives in [jusso-dev/hermes-skills](https://github.com/jusso-dev/hermes-skills) under `plugins/hermes-cyber-au`. It moved from `jusso-dev/hermes-cyber-au`, and its git history came with it.
+
 ```bash
-hermes plugins install jusso-dev/hermes-cyber-au
-hermes skills tap add jusso-dev/hermes-cyber-au
-hermes skills install jusso-dev/hermes-cyber-au/skills/ism-control-lookup
+hermes plugins install jusso-dev/hermes-skills/plugins/hermes-cyber-au
 ```
 
-Repeat the last command for `sentinel-expert`, `aws-cloudwatch-expert`, `essential-eight-assessor`, `incident-response-au`, `threat-intel-check`, and `detection-engineering`.
+The plugin registers its seven skills with Hermes when it loads. To install one skill on its own, without the plugin's tools, use its full path:
+
+```bash
+hermes skills install jusso-dev/hermes-skills/plugins/hermes-cyber-au/skills/ism-control-lookup
+```
+
+The other skills are `sentinel-expert`, `aws-cloudwatch-expert`, `essential-eight-assessor`, `incident-response-au`, `threat-intel-check`, and `detection-engineering`. Most of them call the plugin's tools, so they work best with the plugin installed.
 
 You can also run the command line without installing the plugin:
 
@@ -72,7 +78,7 @@ OSINT (abuse.ch, GreyNoise community, AbuseIPDB, OTX) stays off until `CYBER_AU_
 
 ## Daily refresh
 
-The GitHub Action `.github/workflows/daily-refresh.yml` runs at 19:00 and 20:00 UTC. The script continues only when the clock in Australia/Sydney is 06:00, so one of those hours matches AEST and the other matches AEDT. If nothing material changed, it prints nothing and opens no pull request. It never pushes to main.
+The GitHub Action `cyber-au-knowledge-refresh.yml` at the root of the skills repository (in `.github/workflows-to-enable/` until it is switched on) runs at 19:00 and 20:00 UTC. The script continues only when the clock in Australia/Sydney is 06:00, so one of those hours matches AEST and the other matches AEDT. If nothing material changed, it prints nothing and opens no pull request. It never pushes to main.
 
 On this machine, `hermes-cyber-au install-cron` prints the schedule and does not register it. `--apply` only writes a note under your Hermes scripts directory. It does not call `hermes cron create`.
 
@@ -101,5 +107,7 @@ Doctor reports the snapshot, the eval score, whether live tools and OSINT are of
 python -m unittest discover -s tests -v
 python -m hermes_cyber_au eval
 ```
+
+Run these from `plugins/hermes-cyber-au`. The same checks are in `cyber-au-checks.yml` at the root of the skills repository (in `.github/workflows-to-enable/` until it is switched on).
 
 See CONTRIBUTING.md, SECURITY.md, and CODE_OF_CONDUCT.md.

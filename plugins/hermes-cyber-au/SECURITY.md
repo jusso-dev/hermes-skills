@@ -1,7 +1,7 @@
 # Security
 
 Report a vulnerability in this repository through GitHub security advisories
-on jusso-dev/hermes-cyber-au. Do not open a public issue for a security bug.
+on jusso-dev/hermes-skills. Do not open a public issue for a security bug.
 
 This pack does not want credentials. Live Sentinel and AWS queries stay off
 until you set read-only environment variables yourself. Do not commit those
