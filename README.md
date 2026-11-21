@@ -58,7 +58,7 @@ skills/<skill-name>/SKILL.md          skills served by the tap
 plugins/hermes-cyber-au/              Hermes plugin with its own skills/, tests and knowledge snapshot
 skills.sh.json                        categories shown in Hermes skill search
 scripts/validate_skills.py            checks every SKILL.md against the Hermes format
-.github/workflows-to-enable/          skill validation and the cyber plugin's checks and refresh (see its README)
+.github/workflows/                    skill validation and the cyber plugin's checks and refresh
 ```
 
 ## Safety
