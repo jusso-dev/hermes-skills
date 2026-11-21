@@ -9,7 +9,7 @@ Thanks for helping. A few rules keep this repository useful and safe to publish.
 - Follow the existing shape: what the tool is, When to Use, the procedure, pitfalls, safety rules and how to verify the work.
 - Put long reference material in `references/` next to `SKILL.md` and point to it from the skill.
 - Add the skill to a grouping in `skills.sh.json` and to the table in `README.md`.
-- Run `python scripts/validate_skills.py` before opening a pull request. CI runs it too once the workflows are enabled.
+- Run `python scripts/validate_skills.py` before opening a pull request. CI runs it too.
 
 ## What must never go in
 

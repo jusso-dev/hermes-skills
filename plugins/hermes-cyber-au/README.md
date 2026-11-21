@@ -85,7 +85,7 @@ OSINT (abuse.ch, GreyNoise community, AbuseIPDB, OTX) stays off until `CYBER_AU_
 
 ## Daily refresh
 
-The GitHub Action `cyber-au-knowledge-refresh.yml` at the root of the skills repository (in `.github/workflows-to-enable/` until it is switched on) runs at 19:00 and 20:00 UTC. The script continues only when the clock in Australia/Sydney is 06:00, so one of those hours matches AEST and the other matches AEDT. If nothing material changed, it prints nothing and opens no pull request. It never pushes to main.
+The GitHub Action `.github/workflows/cyber-au-knowledge-refresh.yml` at the root of the skills repository runs at 19:00 and 20:00 UTC. The script continues only when the clock in Australia/Sydney is 06:00, so one of those hours matches AEST and the other matches AEDT. If nothing material changed, it prints nothing and opens no pull request. It never pushes to main.
 
 On this machine, `hermes-cyber-au install-cron` prints the schedule and does not register it. `--apply` only writes a note under your Hermes scripts directory. It does not call `hermes cron create`.
 
@@ -115,6 +115,6 @@ python -m unittest discover -s tests -v
 python -m hermes_cyber_au eval
 ```
 
-Run these from `plugins/hermes-cyber-au`. The same checks are in `cyber-au-checks.yml` at the root of the skills repository (in `.github/workflows-to-enable/` until it is switched on).
+Run these from `plugins/hermes-cyber-au`. The same checks run in `.github/workflows/cyber-au-checks.yml` at the root of the skills repository.
 
 See CONTRIBUTING.md, SECURITY.md, and CODE_OF_CONDUCT.md.
